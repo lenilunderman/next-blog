@@ -1,5 +1,6 @@
 import styles from '../../styles/Ninja.module.css'
 import Head from 'next/head'
+import Link from 'next/link'
 // function provided by next to fetch data before displaying on the screen
 export const getStaticProps = async () => {
     // create the fetch request
@@ -22,11 +23,11 @@ const BlogIndex = ( {users } ) => {
         <div>
             <h1>All users</h1>
             {users.map(user => (
-                <div key={user.id}>
+                <Link href={'/blogs/' + user.id} key={user.id}>
                     <a className={styles.single}>
                         <h3> {user.name }</h3>
                     </a>
-                </div>
+                </Link>
             ))}
             
         </div>
