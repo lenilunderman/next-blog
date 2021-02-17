@@ -9,7 +9,7 @@ export const getStaticPaths = async () =>{
             params: { id: user.id.toString() }
         }
     })
-    // for dynamic data is necessary to use getStaticPaths
+    // for dynamic data is necessary to use getStaticPaths.
     return {
         paths,
         fallback: false
