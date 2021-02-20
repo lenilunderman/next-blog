@@ -3,13 +3,13 @@ export const getStaticPaths = async () =>{
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await res.json()
 
-    // create an const to formulate the array for one obj
+    // create an const to formulate the array for one obj..
     const paths = data.map(user => {
         return {
             params: { id: user.id.toString() }
         }
     })
-    // for dynamic data is necessary to use getStaticPaths.
+    // for dynamic data is necessary to use getStaticPaths..
     return {
         paths,
         fallback: false
